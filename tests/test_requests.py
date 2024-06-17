@@ -918,7 +918,7 @@ class TestRequests:
         requests.put(
             httpbin("put"),
             headers={"Content-Type": "application/octet-stream"},
-            data="\xff",
+            data="\xff".encode("utf-8"),
         )  # compat.str is unicode.
 
     def test_pyopenssl_redirect(self, httpbin_secure, httpbin_ca_bundle):
